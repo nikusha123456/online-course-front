@@ -1,0 +1,4 @@
+.link-hover:hover .link-hover-svg {
+  fill: white;
+  transition: all 0.3s;
+}
