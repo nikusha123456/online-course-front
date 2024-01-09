@@ -9,7 +9,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CoursesComponent } from './pages/courses/courses.component';
-import { LoginComponent } from './pages/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SignupComponent,
     AboutComponent,
     CoursesComponent,
-    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
