@@ -5,7 +5,7 @@
     <div
       class="flex items-center justify-center text-center max-w-[1200px] px-[1rem]"
     >
-      <h1 class="font-bold text-5xl text-white">Log In</h1>
+      <h1 class="font-bold text-6xl text-white">Login</h1>
     </div>
     <div class="block box-border">
       <img
@@ -23,7 +23,7 @@
 </section>
 <section class="flex items-center justify-center py-[100px] bg-[#0C0E2B]">
   <div class="container flex items-center justify-center">
-    <div class="flex flex-col mx-[15px] items-center justify-center">
+    <div class="flex flex-col mx-[15px] items-center justify-center space-y-8">
       <div class="flex flex-row justify-center space-x-3">
         <div
           class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] bg-[#0c0e2b] rounded-md login-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300"
@@ -31,12 +31,46 @@
           Login
         </div>
         <div
-          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] bg-[#170f2f] rounded-md signup-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300"
+          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] bg-[#170f2f] rounded-md signup-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300 hover:bg-[#0c0e2b]"
         >
           Signup
         </div>
       </div>
-      <div></div>
+      <div class="flex items-center justify-center bg-[#0C0E2B] px-[15px]">
+        <div
+          class="flex flex-col items-center justify-center px-[50px] pb-[50px] pt-[30px] signup-box"
+        >
+          <div
+            class="flex items-center justify-center text-center flex-col space-y-4"
+          >
+            <h1 class="text-white text-3xl font-bold">Login</h1>
+            <p class="text-white text-base font-semibold">
+              Don't have an account yet?
+              <a
+                href=""
+                class="hover:text-[#5F2DED] duration-300 hover:duration-300"
+                >Sign up for free</a
+              >
+            </p>
+          </div>
+          <form>
+            <div class="flex flex-col space-y-3 items-start justify-start py-4">
+              <label class="text-white text-lg">Username or Email</label>
+              <input
+                type="text"
+                class="xl:w-[680px] bg-transparent border border-[#312a57] h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+              />
+              <label class="text-white text-lg">Password</label>
+              <input
+                type="text"
+                class="xl:w-[680px] bg-transparent border border-[#312a57] h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+              />
+            </div>
+            <div></div>
+          </form>
+          <div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
