@@ -11,40 +11,46 @@
       <img
         loading="lazy"
         src="../../../assets/images/download.png"
-        class="absolute right-[575px] top-[150px] img-animation1"
+        class="absolute hidden xs:block xl:right-[575px] top-[150px] lg:right-[350px] xs:right-[10px] img-animation1"
       />
       <img
         loading="lazy"
         src="../../../assets/images/download2.png"
-        class="absolute top-[375px] left-[250px] img-animation2"
+        class="absolute hidden xs:block top-[375px] xl:left-[250px] lg:left-[200px] md:left-[100px] sm:left-[50px] xs:left-[10px] img-animation2"
       />
     </div>
   </div>
 </section>
 <section class="flex items-center justify-center py-[100px] bg-[#0C0E2B]">
   <div class="container flex items-center justify-center">
-    <div class="flex flex-col mx-[15px] items-center justify-center space-y-8">
+    <div
+      class="flex flex-col xs:ms-[5px] sm:mx-[15px] items-center justify-center space-y-8"
+    >
       <div class="flex flex-row justify-center space-x-3">
         <div
-          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] bg-[#0c0e2b] rounded-md login-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300"
+          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] lg:w-[330px] md:w-[290px] md:h-[75px] sm:w-[200px] sm:h-[60px] xs:w-[140px] xs:h-[40px] h-[40px] w-[120px] bg-[#0c0e2b] rounded-md login-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300"
         >
           Login
         </div>
         <div
-          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] bg-[#170f2f] rounded-md signup-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300 hover:bg-[#0c0e2b]"
+          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] lg:w-[330px] md:w-[290px] md:h-[75px] sm:w-[200px] sm:h-[60px] xs:w-[140px] xs:h-[40px] h-[40px] w-[120px] bg-[#170f2f] rounded-md signup-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300 hover:bg-[#0c0e2b]"
         >
           Signup
         </div>
       </div>
-      <div class="flex items-center justify-center bg-[#0C0E2B] px-[15px]">
+      <div
+        class="flex items-center justify-center bg-[#0C0E2B] xs:px-[5px] sm:px-[15px]"
+      >
         <div
-          class="flex flex-col items-center justify-center px-[50px] pb-[50px] pt-[30px] signup-box"
+          class="flex flex-col items-center justify-center xs:px-[5px] sm:px-[30px] md:px-[50px] pb-[50px] pt-[30px] signup-box"
         >
           <div
             class="flex items-center justify-center text-center flex-col space-y-4"
           >
-            <h1 class="text-white text-3xl font-bold">Login</h1>
-            <p class="text-white text-base font-semibold">
+            <h1 class="text-white text-2xl xs:text-2xl sm:text-3xl font-bold">
+              Login
+            </h1>
+            <p class="text-white text-sm xs:text-sm sm:text-base font-semibold">
               Don't have an account yet?
               <a
                 href=""
@@ -54,27 +60,35 @@
             </p>
           </div>
           <form class="space-y-5">
-            <div class="flex flex-col space-y-3 items-start justify-start py-4">
-              <label class="text-white text-lg">Username or Email</label>
+            <div
+              class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
+            >
+              <label class="text-white xs:text-base sm:text-lg"
+                >Username or Email</label
+              >
               <input
                 type="text"
-                class="xl:w-[680px] bg-transparent border border-[#312a57] h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
               <label class="text-white text-lg">Password</label>
               <input
                 type="text"
-                class="xl:w-[680px] bg-transparent border border-[#312a57] h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
             </div>
-            <div class="flex flex-row justify-between space-x-24 items-center">
+            <div
+              class="flex flex-row justify-between xs:space-x-18 md:space-x-24 sm:space-x-36 items-center mx-4 space-x-14"
+            >
               <div class="flex items-center justify-between space-x-[8px]">
                 <input type="checkbox" class="w-[18px] h-[30px]" />
-                <label class="text-white text-lg">Remember me</label>
+                <label class="text-white xs:text-xs sm:text-base"
+                  >Remember me</label
+                >
               </div>
               <div>
                 <a
                   href=""
-                  class="text-white text-lg hover:text-[#5f2ded] duration-200 hover:duration-200"
+                  class="text-white xs:text-xs sm:text-base md:text-lg hover:text-[#5f2ded] duration-200 hover:duration-200"
                   >Forgot your password?</a
                 >
               </div>
@@ -82,14 +96,59 @@
             <div class="flex items-center justify-center">
               <a
                 href=""
-                class="w-full px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
+                class="sm:w-[300px] xs:w-[230px] w-[200px] md:w-full px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
                 >Login</a
               >
             </div>
           </form>
-          <div class="flex flex-col space-y-[15px] py-8 text-center">
-            <p class="text-white font-semibold loginwith">or Login with</p>
-            <ul></ul>
+          <div class="flex flex-col space-y-4 py-8 text-center">
+            <p
+              class="text-white font-semibold xl:after:w-[250px] xl:before:w-[250px] lg:after:w-[200px] lg:before:w-[200px] md:after:w-[170px] md:before:w-[170px] sm:after:w-[120px] sm:before:w-[120px] loginwith"
+            >
+              or Login with
+            </p>
+            <ul
+              class="flex sm:flex-row flex-col sm:space-x-2 space-y-3 sm:space-y-0 items-center sm:justify-between justify-center"
+            >
+              <li class="flex items-center justify-center text-center">
+                <a
+                  href=""
+                  class="flex items-center justify-center text-center text-white py-[10px] px-[44px] bg-[#5f2ded] font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="10"
+                    viewBox="0 0 320 512"
+                    class="mr-2"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+                    />
+                  </svg>
+                  Facebook</a
+                >
+              </li>
+              <li class="flex items-center justify-center text-center">
+                <a
+                  href=""
+                  class="flex items-center justify-center text-center text-white py-[10px] px-[44px] bg-[#5f2ded] font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="20"
+                    viewBox="0 0 640 512"
+                    class="mr-2"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M386.1 228.5c1.8 9.7 3.1 19.4 3.1 32C389.2 370.2 315.6 448 204.8 448c-106.1 0-192-85.9-192-192s85.9-192 192-192c51.9 0 95.1 18.9 128.6 50.3l-52.1 50c-14.1-13.6-39-29.6-76.5-29.6-65.5 0-118.9 54.2-118.9 121.3 0 67.1 53.4 121.3 118.9 121.3 76 0 104.5-54.7 109-82.8H204.8v-66h181.3zm185.4 6.4V179.2h-56v55.7h-55.7v56h55.7v55.7h56v-55.7H627.2v-56h-55.7z"
+                    />
+                  </svg>
+                  Google</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>

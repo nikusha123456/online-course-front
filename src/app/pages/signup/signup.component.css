@@ -48,7 +48,6 @@
 .signup-box {
   box-shadow: 0 0 50px 10px rgba(95, 45, 237, 0.1);
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .loginwith {
@@ -60,8 +59,8 @@
   position: absolute;
   height: 1px;
   background: #cacaca;
-  width: 280px;
-  right: 105px;
+
+  right: 240px;
   top: 16px;
 }
 
@@ -70,7 +69,7 @@
   position: absolute;
   height: 1px;
   background: #cacaca;
-  width: 280px;
-  left: 105px;
+
+  left: 240px;
   top: 16px;
 }
