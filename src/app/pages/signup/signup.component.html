@@ -28,12 +28,15 @@
     >
       <div class="flex flex-row justify-center space-x-3">
         <div
-          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] lg:w-[330px] md:w-[290px] md:h-[75px] sm:w-[200px] sm:h-[60px] xs:w-[140px] xs:h-[40px] h-[40px] w-[120px] bg-[#0c0e2b] rounded-md login-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300"
+          [class.active]="isLogin"
+          (click)="toggleSwitch('login')"
+          class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] lg:w-[330px] md:w-[290px] md:h-[75px] sm:w-[200px] sm:h-[60px] xs:w-[140px] xs:h-[40px] h-[40px] w-[120px] rounded-md login-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300 hover:bg-[#0c0e2b]"
         >
           Login
         </div>
         <div
-          (click)="(toggleSwitch1)"
+          [class.active]="!isLogin"
+          (click)="toggleSwitch('signup')"
           class="flex items-center justify-center text-center xl:w-[375px] xl:h-[75px] lg:w-[330px] md:w-[290px] md:h-[75px] sm:w-[200px] sm:h-[60px] xs:w-[140px] xs:h-[40px] h-[40px] w-[120px] bg-[#170f2f] rounded-md signup-button text-xl text-white font-bold cursor-pointer hover:text-[#5F2DED] duration-300 hover:duration-300 hover:bg-[#0c0e2b]"
         >
           Signup

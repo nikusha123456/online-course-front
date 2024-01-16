@@ -10,11 +10,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleSwitch1() {
-    this.isLogin = !this.isLogin;
-  }
-
-  toggleSwitch2() {
-    this.isLogin = this.isLogin;
+  toggleSwitch(section: string) {
+    this.isLogin = section === 'login';
   }
 }
