@@ -10,6 +10,10 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './pages/signup/auth.service';
+import { importProvidersFrom } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -22,8 +26,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AboutComponent,
     CoursesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
+  ],
+  providers: [importProvidersFrom(HttpClientModule), AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

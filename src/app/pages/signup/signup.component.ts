@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
   isLogin: boolean = true;
+  email: string = '';
+  password: string = '';
 
   ngOnInit(): void {}
 
   toggleSwitch(section: string) {
     this.isLogin = section === 'login';
+  }
+  constructor(private authService: AuthService) {}
+
+  signup(): void {
+    const user = { email: this.email, password: this.password };
+    this.authService
+      .signup(user)
+      .subscribe((user) => this.authService.signup(user));
   }
 }
