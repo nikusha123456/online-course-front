@@ -64,7 +64,7 @@
               >
             </p>
           </div>
-          <form class="space-y-5">
+          <form class="space-y-5" (ngSubmit)="login()">
             <div
               class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
             >
@@ -73,11 +73,17 @@
               >
               <input
                 type="text"
+                [(ngModel)]="email2"
+                name="email"
+                required
                 class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
               <label class="text-white text-lg">Password</label>
               <input
-                type="text"
+                type="password"
+                [(ngModel)]="password2"
+                name="password"
+                required
                 class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
             </div>
@@ -99,11 +105,12 @@
               </div>
             </div>
             <div class="flex items-center justify-center">
-              <a
-                href=""
+              <button
+                type="submit"
                 class="sm:w-[300px] xs:w-[230px] w-[200px] md:w-full px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
-                >Login</a
               >
+                Login
+              </button>
             </div>
           </form>
           <div class="flex flex-col space-y-4 py-8 text-center">

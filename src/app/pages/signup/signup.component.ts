@@ -10,6 +10,8 @@ export class SignupComponent implements OnInit {
   isLogin: boolean = true;
   email: string = '';
   password: string = '';
+  email2: string = '';
+  password2: string = '';
 
   ngOnInit(): void {}
 
@@ -23,5 +25,15 @@ export class SignupComponent implements OnInit {
     this.authService
       .signup(user)
       .subscribe((user) => this.authService.signup(user));
+  }
+
+  login() {
+    this.authService
+      .login(this.email2, this.password2)
+      .subscribe((response) => {
+        const token = response.accessToken;
+        this.authService.setAuthToken(token);
+        console.log('Login Successful', response);
+      });
   }
 }
