@@ -187,13 +187,19 @@
           <div
             class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
           >
-            <label class="text-white xs:text-base sm:text-lg"
-              >Username or Email</label
-            >
+            <label class="text-white xs:text-base sm:text-lg">Email</label>
             <input
               type="text"
               [(ngModel)]="email"
               name="email"
+              required
+              class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+            />
+            <label class="text-white xs:text-base sm:text-lg">Username</label>
+            <input
+              type="text"
+              [(ngModel)]="username"
+              name="username"
               required
               class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
             />

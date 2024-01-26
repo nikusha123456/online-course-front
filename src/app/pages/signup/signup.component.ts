@@ -10,6 +10,7 @@ export class SignupComponent implements OnInit {
   isLogin: boolean = true;
   email: string = '';
   password: string = '';
+  username: string = '';
   email2: string = '';
   password2: string = '';
 
@@ -21,7 +22,11 @@ export class SignupComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   signup(): void {
-    const user = { email: this.email, password: this.password };
+    const user = {
+      email: this.email,
+      username: this.username,
+      password: this.password,
+    };
     this.authService
       .signup(user)
       .subscribe((user) => this.authService.signup(user));

@@ -9,7 +9,11 @@ export class AuthService {
   private tokenKey = 'accessToken';
   constructor(private http: HttpClient) {}
 
-  signup(user: { email: string; password: string }): Observable<any> {
+  signup(user: {
+    email: string;
+    username: string;
+    password: string;
+  }): Observable<any> {
     return this.http.post<any>(`http://localhost:3000/auth/signup`, user);
   }
 
