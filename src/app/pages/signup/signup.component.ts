@@ -33,12 +33,13 @@ export class SignupComponent implements OnInit {
   }
 
   login() {
-    this.authService
-      .login(this.email2, this.password2)
-      .subscribe((response) => {
-        const token = response.accessToken;
-        this.authService.setAuthToken(token);
-        console.log('Login Successful', response);
-      });
+    const credentials = {
+      email2: this.email2,
+      password2: this.password2,
+    };
+
+    this.authService.login(credentials).subscribe((response) => {
+      console.log(`Access Token:`, response.accessToken);
+    });
   }
 }
