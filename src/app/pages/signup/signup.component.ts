@@ -34,12 +34,12 @@ export class SignupComponent implements OnInit {
 
   login() {
     const credentials = {
-      email2: this.email2,
-      password2: this.password2,
+      email: this.email2,
+      password: this.password2,
     };
 
     this.authService.login(credentials).subscribe((response) => {
-      console.log(`Access Token:`, response.accessToken);
+      localStorage.setItem('accessToken', response.accessToken);
     });
   }
 }

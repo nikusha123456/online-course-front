@@ -17,15 +17,9 @@ export class AuthService {
   }
 
   login(credentials: any): Observable<{ accessToken: string }> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
     return this.http.post<{ accessToken: string }>(
       `http://localhost:3000/auth/signin`,
-      JSON.stringify(credentials),
-      httpOptions
+      credentials
     );
   }
 }
