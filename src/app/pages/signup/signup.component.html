@@ -64,7 +64,7 @@
               >
             </p>
           </div>
-          <form class="space-y-5" (ngSubmit)="login()">
+          <form class="space-y-5" [formGroup]="loginForm" (ngSubmit)="login()">
             <div
               class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
             >
@@ -73,19 +73,57 @@
               >
               <input
                 type="text"
-                [(ngModel)]="email2"
+                formControlName="email"
                 name="email"
                 required
                 class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
+              <div
+                *ngIf="
+                  loginForm.get('email')?.invalid &&
+                  loginForm.get('email')?.touched
+                "
+              >
+                <p
+                  *ngIf="loginForm.get('email')?.hasError('required')"
+                  class="text-purple-400"
+                >
+                  Email is required.
+                </p>
+                <p
+                  *ngIf="loginForm.get('email')?.hasError('email')"
+                  class="text-purple-400"
+                >
+                  Invalid email address.
+                </p>
+              </div>
               <label class="text-white text-lg">Password</label>
               <input
                 type="password"
-                [(ngModel)]="password2"
+                formControlName="password"
                 name="password"
                 required
                 class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
               />
+              <div
+                *ngIf="
+                  loginForm.get('password')?.invalid &&
+                  loginForm.get('password')?.touched
+                "
+              >
+                <p
+                  *ngIf="loginForm.get('password')?.hasError('required')"
+                  class="text-purple-400"
+                >
+                  Password is required.
+                </p>
+                <p
+                  *ngIf="loginForm.get('password')?.hasError('minlength')"
+                  class="text-purple-400"
+                >
+                  Password should be at least 8 characters.
+                </p>
+              </div>
             </div>
             <div
               class="flex flex-row justify-between xs:space-x-18 md:space-x-24 sm:space-x-36 items-center mx-4 space-x-14"
@@ -183,34 +221,85 @@
             >
           </p>
         </div>
-        <form class="space-y-5" (ngSubmit)="signup()">
+        <form class="space-y-5" [formGroup]="signupForm" (ngSubmit)="signup()">
           <div
             class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
           >
             <label class="text-white xs:text-base sm:text-lg">Email</label>
             <input
               type="text"
-              [(ngModel)]="email"
+              formControlName="email"
               name="email"
               required
               class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
             />
+            <div
+              *ngIf="
+                signupForm.get('email')?.invalid &&
+                signupForm.get('email')?.touched
+              "
+            >
+              <p
+                *ngIf="signupForm.get('email')?.hasError('required')"
+                class="text-purple-400"
+              >
+                Email is required.
+              </p>
+              <p
+                *ngIf="signupForm.get('email')?.hasError('email')"
+                class="text-purple-400"
+              >
+                Invalid email address.
+              </p>
+            </div>
             <label class="text-white xs:text-base sm:text-lg">Username</label>
             <input
               type="text"
-              [(ngModel)]="username"
+              formControlName="username"
               name="username"
               required
               class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
             />
+            <div
+              *ngIf="
+                signupForm.get('username')?.invalid &&
+                signupForm.get('username')?.touched
+              "
+            >
+              <p
+                *ngIf="signupForm.get('username')?.hasError('required')"
+                class="text-purple-400"
+              >
+                Username is required.
+              </p>
+            </div>
             <label class="text-white text-lg">Password</label>
             <input
               type="password"
-              [(ngModel)]="password"
+              formControlName="password"
               name="password"
               required
               class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
             />
+            <div
+              *ngIf="
+                signupForm.get('password')?.invalid &&
+                signupForm.get('password')?.touched
+              "
+            >
+              <p
+                *ngIf="signupForm.get('password')?.hasError('required')"
+                class="text-purple-400"
+              >
+                Password is required.
+              </p>
+              <p
+                *ngIf="signupForm.get('password')?.hasError('minlength')"
+                class="text-purple-400"
+              >
+                Password should be at least 8 characters.
+              </p>
+            </div>
           </div>
           <div
             class="flex flex-row justify-between xs:space-x-18 md:space-x-24 sm:space-x-36 items-center mx-4 space-x-14"

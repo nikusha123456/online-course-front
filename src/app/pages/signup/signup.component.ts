@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -8,38 +9,42 @@ import { AuthService } from './auth.service';
 })
 export class SignupComponent implements OnInit {
   isLogin: boolean = true;
-  email: string = '';
-  password: string = '';
-  username: string = '';
-  email2: string = '';
-  password2: string = '';
+  signupForm!: FormGroup;
+  loginForm!: FormGroup;
 
   ngOnInit(): void {}
 
   toggleSwitch(section: string) {
     this.isLogin = section === 'login';
   }
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private fb: FormBuilder) {
+    this.signupForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+  }
 
   signup(): void {
-    const user = {
-      email: this.email,
-      username: this.username,
-      password: this.password,
-    };
-    this.authService
-      .signup(user)
-      .subscribe((user) => this.authService.signup(user));
+    if (this.signupForm.valid) {
+      const user = this.signupForm.value;
+      this.authService
+        .signup(user)
+        .subscribe((user) => this.authService.signup(user));
+    }
   }
 
   login() {
-    const credentials = {
-      email: this.email2,
-      password: this.password2,
-    };
-
-    this.authService.login(credentials).subscribe((response) => {
-      localStorage.setItem('accessToken', response.accessToken);
-    });
+    if (this.loginForm.valid) {
+      const credentials = this.loginForm.value;
+      this.authService.login(credentials).subscribe((response) => {
+        localStorage.setItem('accessToken', response.accessToken);
+      });
+    }
   }
 }

@@ -11,7 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './pages/signup/auth.service';
 import { importProvidersFrom } from '@angular/core';
 
@@ -32,6 +32,7 @@ import { importProvidersFrom } from '@angular/core';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [importProvidersFrom(HttpClientModule), AuthService],
   bootstrap: [AppComponent],
