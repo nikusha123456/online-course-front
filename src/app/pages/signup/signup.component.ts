@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AuthService } from './auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ export class SignupComponent implements OnInit {
   isLogin: boolean = true;
   signupForm!: FormGroup;
   loginForm!: FormGroup;
-
+  router = inject(Router);
   ngOnInit(): void {}
 
   toggleSwitch(section: string) {
@@ -44,6 +45,7 @@ export class SignupComponent implements OnInit {
       const credentials = this.loginForm.value;
       this.authService.login(credentials).subscribe((response) => {
         localStorage.setItem('accessToken', response.accessToken);
+        this.router.navigateByUrl('/');
       });
     }
   }
