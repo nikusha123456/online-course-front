@@ -1,0 +1,44 @@
+@keyframes dot-anim {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move5 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes appleanim {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.img-animation1 {
+  animation: 3s linear 0s infinite alternate none running dot-anim;
+}
+
+.img-animation2 {
+  animation: 3s linear 0s infinite normal none running move5;
+}
+
+.img-animation3 {
+  animation: 3s linear 0s infinite normal none running appleanim;
+}
