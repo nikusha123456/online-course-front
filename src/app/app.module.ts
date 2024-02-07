@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './pages/signup/auth.service';
 import { importProvidersFrom } from '@angular/core';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { importProvidersFrom } from '@angular/core';
     SignupComponent,
     AboutComponent,
     CoursesComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

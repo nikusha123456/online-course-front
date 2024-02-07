@@ -22,4 +22,11 @@ export class AuthService {
       credentials
     );
   }
+
+  forgotPassword(credentials: any): Observable<any> {
+    return this.http.post(
+      `http://localhost:3000/auth/forgot-password`,
+      credentials
+    );
+  }
 }
