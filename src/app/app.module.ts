@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './pages/signup/auth.service';
 import { importProvidersFrom } from '@angular/core';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { AboutAreaComponent } from './components/about-area/about-area.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     AboutComponent,
     CoursesComponent,
     ForgotPasswordComponent,
+    AboutAreaComponent,
+    SubjectsComponent,
   ],
   imports: [
     BrowserModule,
