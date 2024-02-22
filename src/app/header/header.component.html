@@ -56,7 +56,28 @@
         </div>
         <div
           class="h-[45px] w-[45px] bg-transparent border border-white flex items-center justify-center cursor-pointer rounded-md hover:bg-purple-900 hover:duration-300 duration-300 hover:border-purple-900"
+          routerLink="/"
+          *ngIf="isLoggedIn"
+        >
+          <a
+            class="flex items-center justify-center bg-transparent cursor-pointer"
+            routerLink="/"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="18"
+              width="20"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="#ffffff"
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              /></svg
+          ></a>
+        </div>
+        <div
+          class="h-[45px] w-[45px] bg-transparent border border-white flex items-center justify-center cursor-pointer rounded-md hover:bg-purple-900 hover:duration-300 duration-300 hover:border-purple-900"
           routerLink="/signup"
+          *ngIf="!isLoggedIn"
         >
           <a
             class="flex items-center justify-center bg-transparent cursor-pointer"
@@ -73,12 +94,20 @@
               /></svg
           ></a>
         </div>
-        <div>
+        <div *ngIf="!isLoggedIn">
           <a
             class="flex items-center justify-center text-center h-[40px] w-[100px] border border-purple-800 bg-purple-800 rounded-md hover:bg-[#0C0E2B] hover:duration-200 duration-200 cursor-pointer text-white font-semibold"
           >
             Get Started
           </a>
+        </div>
+        <div *ngIf="isLoggedIn">
+          <button
+            (click)="logOut()"
+            class="flex items-center justify-center text-center h-[40px] w-[100px] border border-purple-800 bg-purple-800 rounded-md hover:bg-[#0C0E2B] hover:duration-200 duration-200 cursor-pointer text-white font-semibold"
+          >
+            Log Out
+          </button>
         </div>
       </div>
     </div>

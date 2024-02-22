@@ -45,7 +45,9 @@ export class SignupComponent implements OnInit {
       const credentials = this.loginForm.value;
       this.authService.login(credentials).subscribe((response) => {
         localStorage.setItem('accessToken', response.accessToken);
-        this.router.navigateByUrl('/');
+        window.location.reload();
+        window.location.href = '/';
+        this.authService.expiringToken(3600000);
       });
     }
   }

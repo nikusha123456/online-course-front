@@ -29,4 +29,15 @@ export class AuthService {
       credentials
     );
   }
+
+  expiringToken(time: number) {
+    setTimeout(() => {
+      localStorage.clear();
+    }, time);
+  }
+
+  logOut() {
+    localStorage.clear();
+    window.location.reload();
+  }
 }
