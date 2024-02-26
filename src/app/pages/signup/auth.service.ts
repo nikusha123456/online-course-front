@@ -40,4 +40,10 @@ export class AuthService {
     localStorage.clear();
     window.location.reload();
   }
+
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('accessToken');
+
+    return !!token;
+  }
 }

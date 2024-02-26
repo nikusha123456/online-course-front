@@ -18,6 +18,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { AboutAreaComponent } from './components/about-area/about-area.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [importProvidersFrom(HttpClientModule), AuthService],
+  providers: [importProvidersFrom(HttpClientModule), AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
