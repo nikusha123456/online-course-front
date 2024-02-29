@@ -6,7 +6,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard, ProfileGuard } from './auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
     component: ForgotPasswordComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

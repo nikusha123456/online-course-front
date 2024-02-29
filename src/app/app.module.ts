@@ -18,7 +18,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { AboutAreaComponent } from './components/about-area/about-area.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard, ProfileGuard } from './auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthGuard } from './auth.guard';
     AboutAreaComponent,
     SubjectsComponent,
     NotFoundComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,12 @@ import { AuthGuard } from './auth.guard';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [importProvidersFrom(HttpClientModule), AuthService, AuthGuard],
+  providers: [
+    importProvidersFrom(HttpClientModule),
+    AuthService,
+    AuthGuard,
+    ProfileGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

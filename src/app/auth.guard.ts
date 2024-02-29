@@ -14,16 +14,31 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    // Check if the user is logged in using the authService
     const isLoggedIn = this.authService.isLoggedIn();
 
     if (isLoggedIn) {
-      // If the user is logged in, redirect them to another route (for example, home)
       this.router.navigate(['/']);
       return false;
     }
 
-    // If the user is not logged in, allow access to the route
+    return true;
+  }
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProfileGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    const isLoggedIn = this.authService.isLoggedIn();
+
+    if (!isLoggedIn) {
+      this.router.navigate(['/signup']);
+      return false;
+    }
+
     return true;
   }
 }
