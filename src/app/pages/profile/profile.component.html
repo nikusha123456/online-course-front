@@ -1,21 +1,22 @@
-<section class="bg-[#0D0E2C] flex items-center justify-center">
+<section class="bg-[#0D0E2C] flex items-center justify-center pb-[200px]">
   <div
-    class="container flex flex-col items-center justify-center space-y-4 px-[150px]"
+    class="container flex flex-col items-center justify-center space-y-8 px-[150px]"
   >
     <div
-      class="flex flex-row items-center justify-between bg-[#03a9f4] p-[40px] rounded-[20px]"
+      class="flex flex-row items-center justify-between bg-[#03a9f4] p-[40px] rounded-[20px] gap-72"
     >
       <div class="flex flex-row space-x-3 items-center justify-start">
         <div class="w-[120px] h-[120px]">
           <img
             class="w-full h-full object-cover rounded-full border-[2px] border-[#c4c4c4] p-[4px]"
-            src=""
+            [src]="imageUrl"
             loading="lazy"
+            *ngIf="imageUrl"
           />
         </div>
 
         <div class="flex flex-col space-y-2 items-start justify-start">
-          <h4 class="text-xl font-bold text-white">Username</h4>
+          <h4 class="text-xl font-bold text-white">{{ username }}</h4>
           <ul class="flex items-center justify-between space-x-2">
             <li
               class="text-base text-[#0c0e2b] flex items-center justify-between gap-1"
@@ -52,8 +53,69 @@
           </ul>
         </div>
       </div>
-      <div></div>
+      <div class="flex items-end justify-end">
+        <div class="flex items-center justify-center">
+          <a
+            class="flex items-center justify-center py-[10px] px-[25px] bg-[#f2277e] border border-[#f2277e] rounded-[4px] text-white font-semibold cursor-pointer"
+            >Enroll A New Course
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="24px"
+                height="24px"
+                style="margin-left: 8px"
+              >
+                <path
+                  fill="#fff"
+                  d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                /></svg
+            ></span>
+          </a>
+        </div>
+      </div>
     </div>
-    <div></div>
+    <div
+      class="flex flex-col space-y-6 items-center justify-center py-[50px] px-[40px] rounded-[20px] bg-[#0c0e2b] max-w-screen-lg w-full"
+      style="box-shadow: 0 0 1px 1px rgba(95, 45, 237, 0.2)"
+    >
+      <div
+        class="flex items-start justify-start py-3 border-b-2 border-[#312A57] w-full"
+      >
+        <h1 class="text-white text-start font-bold text-2xl">My Profile</h1>
+      </div>
+      <div class="flex items-center justify-start w-full">
+        <div class="flex items-start justify-start w-full">
+          <ul class="flex flex-col space-y-3 items-start justify-start w-full">
+            <li class="flex flex-row space-x-12 items-start w-full">
+              <div class="flex items-start justify-start text-start w-1/5">
+                <h2 class="text-white font-normal text-lg">Email</h2>
+              </div>
+              <div class="flex items-start justify-start text-start w-2/3">
+                <h2 class="text-white font-normal text-lg">{{ email }}</h2>
+              </div>
+            </li>
+            <li class="flex flex-row space-x-12 items-start w-full">
+              <div class="flex items-start justify-start text-start w-1/5">
+                <h2 class="text-white font-normal text-lg">Username</h2>
+              </div>
+              <div class="flex items-start justify-start text-start w-2/3">
+                <h2 class="text-white font-normal text-lg">{{ username }}</h2>
+              </div>
+            </li>
+            <li class="flex flex-row space-x-12 items-start w-full">
+              <div class="flex items-start justify-start text-start w-1/5">
+                <h2 class="text-white font-normal text-lg">Description</h2>
+              </div>
+              <div class="flex items-start justify-start text-start w-2/3">
+                <h2 class="text-white font-normal text-lg">
+                  {{ description }}
+                </h2>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
