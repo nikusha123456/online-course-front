@@ -2,3 +2,71 @@
   fill: purple;
   transition: all 0.3s;
 }
+.burger-menu {
+  animation: slideIn 0.5s forwards;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+.menu-item {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-item-line {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #f2277e; /* Change to desired hover color */
+}
+
+.menu-item:hover .menu-item-line {
+  width: 100%;
+  background-color: #f2277e; /* Change to desired line color */
+}
+
+.slideOut {
+  animation: slideOutAnimation 0.5s forwards;
+}
+
+@keyframes slideOutAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.slideIn {
+  animation: slideInAnimation 0.5s forwards;
+}
+
+@keyframes slideInAnimation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

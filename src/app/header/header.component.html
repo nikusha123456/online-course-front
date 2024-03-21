@@ -38,6 +38,77 @@
           </li>
         </ul>
       </div>
+      <div class="lg:hidden">
+        <button
+          class="text-white focus:outline-none"
+          (click)="toggleBurgerMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- burger menu -->
+      <div
+        [ngClass]="{
+          'burger-menu': true,
+          slideIn: isBurgerMenuOpen,
+          slideOut: !isBurgerMenuOpen
+        }"
+        class="lg:hidden fixed top-0 right-0 h-full w-full bg-purple-900 z-50"
+      >
+        <button
+          class="close-btn focus:outline-none"
+          (click)="toggleBurgerMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <div class="flex flex-col items-center justify-center h-full">
+          <ul class="text-white text-lg font-bold">
+            <li>
+              <a routerLink="/" class="menu-item">Home</a
+              ><span class="menu-item-line"></span>
+            </li>
+            <li>
+              <a routerLink="/courses" class="menu-item">Courses</a
+              ><span class="menu-item-line"></span>
+            </li>
+            <li>
+              <a class="menu-item">Add Course</a
+              ><span class="menu-item-line"></span>
+            </li>
+            <li>
+              <a class="menu-item">My Courses</a
+              ><span class="menu-item-line"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="hidden lg:flex items-center justify-center space-x-4">
         <div class="flex justify-center">
           <a
