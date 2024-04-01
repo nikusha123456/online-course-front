@@ -20,6 +20,7 @@ import { SubjectsComponent } from './components/subjects/subjects.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CoursesService } from './pages/courses/courses.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AuthService,
     AuthGuard,
     ProfileGuard,
+    CoursesService,
   ],
   bootstrap: [AppComponent],
 })
