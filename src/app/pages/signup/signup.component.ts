@@ -34,9 +34,9 @@ export class SignupComponent implements OnInit {
   signup(): void {
     if (this.signupForm.valid) {
       const user = this.signupForm.value;
-      this.authService
-        .signup(user)
-        .subscribe((user) => this.authService.signup(user));
+      this.authService.signup(user).subscribe(() => {
+        alert('SignUp was successful!');
+      });
     }
   }
 

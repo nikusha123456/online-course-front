@@ -9,8 +9,7 @@ export class ProfileService {
   private accessToken: string;
 
   constructor(private http: HttpClient) {
-    
-    this.accessToken = localStorage.getItem('accessToken') ?? ''; 
+    this.accessToken = localStorage.getItem('accessToken') ?? '';
   }
 
   getProfile(): Observable<any> {
@@ -24,6 +23,19 @@ export class ProfileService {
     );
 
     return this.http.get<any>('http://localhost:3000/users/profile', {
+      headers,
+    });
+  }
+
+  deleteAccount(): Observable<any> {
+    localStorage.clear();
+    window.location.reload();
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + this.accessToken
+    );
+
+    return this.http.delete<any>('http://localhost:3000/users/profile', {
       headers,
     });
   }

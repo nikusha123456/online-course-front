@@ -22,4 +22,9 @@ export class ProfileComponent implements OnInit {
       this.imageUrl = data.imageUrl;
     });
   }
+  deleteUser() {
+    this.profileService.deleteAccount().subscribe(() => {
+      console.log('User account deleted successfully.');
+    });
+  }
 }
