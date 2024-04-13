@@ -22,6 +22,8 @@ import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesService } from './pages/courses/courses.service';
 
+import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-forms.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,7 @@ import { CoursesService } from './pages/courses/courses.service';
     SubjectsComponent,
     NotFoundComponent,
     ProfileComponent,
+    EditUserFormsComponent,
   ],
   imports: [
     BrowserModule,

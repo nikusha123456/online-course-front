@@ -1,0 +1,53 @@
+<div
+  class="fixed inset-0 overflow-y-auto flex items-center justify-center z-50"
+>
+  <div class="relative bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+    <h2 class="text-xl font-bold mb-4">Edit Account</h2>
+    <form (ngSubmit)="submitForm()" class="space-y-4">
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700"
+          >Username</label
+        >
+        <input
+          type="text"
+          [(ngModel)]="username"
+          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700"
+          >Description</label
+        >
+        <textarea
+          [(ngModel)]="description"
+          rows="3"
+          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+        ></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Image</label>
+        <input
+          type="file"
+          [(ngModel)]="imageUrl"
+          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+        />
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          (click)="close.emit()"
+          class="ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="fixed inset-0 bg-black opacity-25"></div>

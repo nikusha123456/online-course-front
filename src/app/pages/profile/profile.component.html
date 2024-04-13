@@ -13,21 +13,21 @@
         >
           <img
             class="w-full h-full object-cover rounded-full border-[2px] border-[#c4c4c4] p-[2px]"
-            [src]="imageUrl"
+            [src]="imageUrl1"
             loading="lazy"
-            *ngIf="imageUrl"
+            *ngIf="imageUrl1"
           />
           <img
             class="w-full h-full object-cover rounded-full border-[2px] border-[#c4c4c4] p-[2px]"
             src="../../../assets/images/casual-default-pfp-aesthetic-xbt951r8ftf29b58.jpg"
             loading="lazy"
-            *ngIf="!imageUrl"
+            *ngIf="!imageUrl1"
           />
         </div>
 
         <div class="flex flex-col space-y-2 items-start justify-start">
           <h4 class="text-lg md:text-xl font-bold text-white">
-            {{ username }}
+            {{ username1 }}
           </h4>
           <ul
             class="flex flex-wrap items-center justify-start xl:space-x-12 md:space-x-4 lg:space-x-0"
@@ -117,7 +117,7 @@
                 class="flex items-start justify-start text-start w-full md:w-2/3"
               >
                 <h2 class="text-white font-normal text-sm md:text-lg">
-                  {{ email }}
+                  {{ email1 }}
                 </h2>
               </div>
             </li>
@@ -135,7 +135,7 @@
                 class="flex items-start justify-start text-start w-full md:w-2/3"
               >
                 <h2 class="text-white font-normal text-sm md:text-lg">
-                  {{ username }}
+                  {{ username1 }}
                 </h2>
               </div>
             </li>
@@ -153,9 +153,17 @@
                 class="flex items-start justify-start text-start w-full md:w-2/3"
               >
                 <h2 class="text-white font-normal text-sm md:text-lg">
-                  {{ description }}
+                  {{ description1 }}
                 </h2>
               </div>
+            </li>
+            <li>
+              <button
+                (click)="showEditForm = true"
+                class="flex items-center justify-center bg-[#5f2ded] w-[100px] h-[40px] sm:w-[150px] md:h-[50px] border border-[#5f2ded] rounded-[4px] hover:bg-[#0C0E2B] duration-300 hover:duration-300 cursor-pointer text-white font-medium sm:text-base text-sm"
+              >
+                Edit Account
+              </button>
             </li>
             <li>
               <button
@@ -167,6 +175,76 @@
             </li>
           </ul>
         </div>
+        <div
+          *ngIf="showEditForm"
+          class="fixed inset-0 overflow-y-auto flex items-center justify-center z-50"
+        >
+          <div
+            class="absolute bg-white shadow-md rounded-lg p-8 w-full max-w-md"
+          >
+            <h2 class="text-xl font-bold mb-4">Edit Account</h2>
+
+            <form
+              class="flex flex-col space-y-3"
+              [formGroup]="editForm"
+              (ngSubmit)="editAccount()"
+            >
+              <div>
+                <label class="block text-sm font-medium text-gray-700"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  [(ngModel)]="username"
+                  name="username"
+                  formControlName="username"
+                  class="w-[385px] bg-transparent border border-[#312a57] h-[40px] rounded outline-none px-[20px] py-[3px] text-purple-600 font-semibold text-base"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700"
+                  >Description</label
+                >
+                <textarea
+                  [(ngModel)]="description"
+                  rows="3"
+                  name="description"
+                  formControlName="description"
+                  class="w-[385px] bg-transparent border border-[#312a57] rounded outline-none px-[20px] py-[3px] text-purple-600 font-semibold text-base"
+                ></textarea>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700"
+                  >Image</label
+                >
+                <input
+                  type="file"
+                  [(ngModel)]="imageUrl"
+                  name="imageUrl"
+                  formControlName="imageUrl"
+                  class="w-[385px] bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
+                />
+              </div>
+              <button
+                type="submit"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                (click)="showEditForm = false"
+                class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          *ngIf="showEditForm"
+          class="fixed inset-0 bg-black opacity-25"
+        ></div>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ export class CoursesComponent implements OnInit {
   courses: any[] = [];
   currentPage: number = 1;
   totalCourses: number = 0;
+  selectedSortOption: string = '';
 
   constructor(private courseService: CoursesService) {}
 
@@ -22,6 +23,34 @@ export class CoursesComponent implements OnInit {
       this.courses = data.courses;
       this.totalCourses = data.totalCount;
     });
+  }
+
+  sortCourses() {
+    if (this.selectedSortOption === '2') {
+      this.sortHighToLow();
+    } else if (this.selectedSortOption === '') {
+      this.fetchCourses();
+    } else if (this.selectedSortOption === '1') {
+      this.sortLowToHigh();
+    }
+  }
+
+  sortLowToHigh() {
+    this.courseService
+      .sortByPriceLowToHigh(this.currentPage)
+      .subscribe((data) => {
+        this.courses = data.courses;
+        this.totalCourses = data.totalCount;
+      });
+  }
+
+  sortHighToLow() {
+    this.courseService
+      .sortByPriceHighToLow(this.currentPage)
+      .subscribe((data) => {
+        this.courses = data.courses;
+        this.totalCourses = data.totalCount;
+      });
   }
 
   prevPage() {

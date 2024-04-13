@@ -39,4 +39,20 @@ export class ProfileService {
       headers,
     });
   }
+
+  editAccount(user: {
+    username: string;
+    description: string;
+    imageUrl: string;
+  }): Observable<any> {
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + this.accessToken
+    );
+
+    window.location.reload();
+    return this.http.patch<any>('http://localhost:3000/users/edit-user', user, {
+      headers,
+    });
+  }
 }
