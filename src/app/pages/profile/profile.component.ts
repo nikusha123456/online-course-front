@@ -14,9 +14,9 @@ export class ProfileComponent implements OnInit {
   imageUrl1!: string;
   showEditForm: boolean = false;
   editForm!: FormGroup;
-  username!: string;
-  description!: string;
-  imageUrl!: string;
+  username?: string = '';
+  description?: string = '';
+  imageUrl?: string = '';
 
   constructor(private profileService: ProfileService, private fb: FormBuilder) {
     this.editForm = this.fb.group({
