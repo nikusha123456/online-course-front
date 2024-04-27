@@ -21,8 +21,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesService } from './pages/courses/courses.service';
-
 import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-forms.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-f
     NotFoundComponent,
     ProfileComponent,
     EditUserFormsComponent,
+    AdminLoginComponent,
+    AddCourseComponent,
   ],
   imports: [
     BrowserModule,

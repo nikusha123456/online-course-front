@@ -1,0 +1,112 @@
+<section
+  class="bg-[#170F2F] flex items-center justify-center pt-[170px] pb-[170px]"
+>
+  <div class="container flex items-center justify-center">
+    <div
+      class="flex items-center justify-center text-center max-w-[1200px] px-[1rem]"
+    >
+      <h1 class="font-bold text-6xl text-white">Admin Login</h1>
+    </div>
+    <div class="block box-border">
+      <img
+        loading="lazy"
+        src="../../../assets/images/download.png"
+        class="absolute hidden xs:block xl:right-[575px] top-[150px] lg:right-[350px] xs:right-[10px] img-animation1"
+      />
+      <img
+        loading="lazy"
+        src="../../../assets/images/download2.png"
+        class="absolute hidden xs:block top-[375px] xl:left-[250px] lg:left-[200px] md:left-[100px] sm:left-[50px] xs:left-[10px] img-animation2"
+      />
+    </div>
+  </div>
+</section>
+<section class="flex items-center justify-center py-[60px] bg-[#0C0E2B]">
+  <div class="container flex items-center justify-center">
+    <div
+      class="flex flex-col xs:mx-[0px] sm:mx-[15px] items-center justify-center space-y-8 mx-0"
+    >
+      <div
+        class="flex items-center justify-center bg-[#0C0E2B] xs:px-[0px] sm:px-[15px] px-0"
+      >
+        <div
+          class="flex flex-col items-center justify-center xs:px-[0px] sm:px-[30px] md:px-[50px] pb-[50px] pt-[30px] login-box"
+        >
+          <form class="space-y-5" [formGroup]="adminForm" (ngSubmit)="login()">
+            <div
+              class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
+            >
+              <label class="text-white xs:text-base sm:text-lg"
+                >Username
+              </label>
+              <input
+                type="text"
+                formControlName="username"
+                name="username"
+                required
+                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+              />
+              <div
+                *ngIf="
+                  adminForm.get('username')?.invalid &&
+                  adminForm.get('username')?.touched
+                "
+              >
+                <p
+                  *ngIf="adminForm.get('email')?.hasError('required')"
+                  class="text-purple-400"
+                >
+                  Username is required.
+                </p>
+                <p
+                  *ngIf="adminForm.get('email')?.hasError('email')"
+                  class="text-purple-400"
+                >
+                  Invalid Username.
+                </p>
+              </div>
+              <label class="text-white text-lg">Password</label>
+              <input
+                type="password"
+                formControlName="password"
+                name="password"
+                required
+                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+              />
+              <div
+                *ngIf="
+                  adminForm.get('password')?.invalid &&
+                  adminForm.get('password')?.touched
+                "
+              >
+                <p
+                  *ngIf="adminForm.get('password')?.hasError('required')"
+                  class="text-purple-400"
+                >
+                  Password is required.
+                </p>
+                <p
+                  *ngIf="adminForm.get('password')?.hasError('minlength')"
+                  class="text-purple-400"
+                >
+                  Password should be at least 8 characters.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-row justify-between xs:space-x-18 md:space-x-24 sm:space-x-36 items-center mx-4 space-x-14"
+            ></div>
+            <div class="flex items-center justify-center">
+              <button
+                type="submit"
+                class="sm:w-[300px] xs:w-[230px] w-[200px] md:w-full px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

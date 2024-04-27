@@ -1,0 +1,23 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AdminService {
+  constructor(private http: HttpClient) {}
+
+  login(credentials: any): Observable<{ accessToken: string }> {
+    return this.http.post<{ accessToken: string }>(
+      `http://localhost:3000/admin/signin`,
+      credentials
+    );
+  }
+
+  expiringToken(time: number) {
+    setTimeout(() => {
+      localStorage.clear();
+    }, time);
+  }
+}

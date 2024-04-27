@@ -40,15 +40,15 @@
 .pagination button {
   padding: 8px 16px;
   margin-right: 8px;
-  background-color: #3182ce;
+  background-color: #5f2ded;
   color: white;
-  border: none;
+  border: 1px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .pagination button:hover {
-  background-color: #2c5282;
+  background-color: #360ea5;
 }
 
 .pagination button:disabled {

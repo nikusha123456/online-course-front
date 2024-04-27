@@ -8,6 +8,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] },
+  {
+    path: 'add-course',
+    component: AddCourseComponent,
+  },
+  { path: 'admin/login', component: AdminLoginComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
