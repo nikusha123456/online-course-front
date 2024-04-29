@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AdminService } from './admin.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +16,7 @@ export class AdminLoginComponent implements OnInit {
     this.adminForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      role: [1], // getit gavaketo
+      role1: [1], // getit gavaketo
     });
   }
 

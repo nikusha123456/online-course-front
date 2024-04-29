@@ -6,7 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CoursesService {
-  constructor(private http: HttpClient) {}
+  private accessToken: string;
+  constructor(private http: HttpClient) {
+    this.accessToken = localStorage.getItem('accessToken') ?? '';
+  }
 
   getCourses(page: number): Observable<any> {
     const headers = new HttpHeaders({
@@ -38,5 +41,25 @@ export class CoursesService {
       `http://localhost:3000/courses/low-to-high?page=${page}`,
       { headers }
     );
+  }
+
+  createCourse(course: {
+    course_title: string;
+    description: string;
+    price: number;
+    imageUrl: string;
+  }): Observable<any> {
+    if (!this.accessToken) {
+      throw new Error('Access token not found');
+    }
+
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + this.accessToken
+    );
+
+    return this.http.post<any>(`http://localhost:3000/courses/create`, course, {
+      headers,
+    });
   }
 }
