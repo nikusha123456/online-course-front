@@ -9,7 +9,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
-import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 const routes: Routes = [
   {

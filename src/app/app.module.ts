@@ -22,7 +22,7 @@ import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesService } from './services/courses.service';
 import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-forms.component';
-import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 
 @NgModule({
