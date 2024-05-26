@@ -24,6 +24,7 @@ import { CoursesService } from './services/courses.service';
 import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-forms.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { MycoursesComponent } from './pages/mycourses/mycourses.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AddCourseComponent } from './pages/add-course/add-course.component';
     EditUserFormsComponent,
     AdminLoginComponent,
     AddCourseComponent,
+    MycoursesComponent,
   ],
   imports: [
     BrowserModule,

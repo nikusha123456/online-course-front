@@ -73,7 +73,6 @@ export class CoursesComponent implements OnInit {
   }
 
   get totalPages(): number[] {
-    // Assuming pageSize is hardcoded as 9
     return Array.from(
       { length: Math.ceil(this.totalCourses / 9) },
       (_, index) => index + 1

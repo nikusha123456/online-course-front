@@ -10,6 +10,7 @@ import { AuthGuard, ProfileGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { MycoursesComponent } from './pages/mycourses/mycourses.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] },
+  {
+    path: 'mycourses',
+    component: MycoursesComponent,
+    canActivate: [ProfileGuard],
+  },
   {
     path: 'add-course',
     component: AddCourseComponent,

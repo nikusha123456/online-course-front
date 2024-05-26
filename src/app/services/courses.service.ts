@@ -62,4 +62,22 @@ export class CoursesService {
       headers,
     });
   }
+
+  getMyCourses(page: number): Observable<any> {
+    if (!this.accessToken) {
+      throw new Error('Access token not found');
+    }
+
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + this.accessToken
+    );
+
+    return this.http.get<any>(
+      `http://localhost:3000/courses/mycourses?page=${page}`,
+      {
+        headers,
+      }
+    );
+  }
 }
