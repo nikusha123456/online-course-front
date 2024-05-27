@@ -45,7 +45,7 @@ export class MycoursesComponent implements OnInit {
 
   get totalPages(): number[] {
     return Array.from(
-      { length: Math.ceil(this.totalCourses / 4) },
+      { length: Math.ceil(this.totalCourses / 9) },
       (_, index) => index + 1
     );
   }
