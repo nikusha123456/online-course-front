@@ -30,3 +30,6 @@
 .card-container:hover .edit-button {
   opacity: 1;
 }
+.course-card {
+  box-shadow: 0 0 20px 10px rgba(95, 45, 237, 0.1);
+}

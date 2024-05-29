@@ -11,6 +11,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { MycoursesComponent } from './pages/mycourses/mycourses.component';
+import { EditCourseComponent } from './pages/edit-course/edit-course.component';
 
 const routes: Routes = [
   {
@@ -42,9 +43,11 @@ const routes: Routes = [
     canActivate: [ProfileGuard],
   },
   {
-    path: 'add-course',
+    path: 'course-add',
     component: AddCourseComponent,
+    canActivate: [ProfileGuard],
   },
+  { path: 'course-edit/:id', component: EditCourseComponent },
   { path: 'admin/login', component: AdminLoginComponent },
   { path: '**', component: NotFoundComponent },
 ];

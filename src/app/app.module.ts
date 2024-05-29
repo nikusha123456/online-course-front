@@ -25,6 +25,7 @@ import { EditUserFormsComponent } from './components/edit-user-forms/edit-user-f
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { MycoursesComponent } from './pages/mycourses/mycourses.component';
+import { EditCourseComponent } from './pages/edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MycoursesComponent } from './pages/mycourses/mycourses.component';
     AdminLoginComponent,
     AddCourseComponent,
     MycoursesComponent,
+    EditCourseComponent,
   ],
   imports: [
     BrowserModule,
