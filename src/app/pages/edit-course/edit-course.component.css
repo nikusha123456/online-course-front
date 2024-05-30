@@ -1,0 +1,94 @@
+@keyframes dot-anim {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move5 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.img-animation1 {
+  animation: 3s linear 0s infinite alternate none running dot-anim;
+}
+
+.img-animation2 {
+  animation: 3s linear 0s infinite normal none running move5;
+}
+
+.login-button.active::after,
+.signup-button.active::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.login-button {
+  background-color: #170f2f;
+}
+
+.login-button.active {
+  background-color: #0c0e2b;
+}
+
+.signup-button.active {
+  background-color: #0c0e2b;
+}
+
+.login-button,
+.signup-button {
+  box-shadow: 0px 0 20px 5px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: #5f2ded;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 0px 0px 2px 2px;
+  width: 100%;
+}
+
+.login-box {
+  box-shadow: 0 0 50px 10px rgba(95, 45, 237, 0.1);
+  border-radius: 5px;
+}
+
+.loginwith {
+  position: relative;
+}
+
+.loginwith::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #cacaca;
+
+  right: 240px;
+  top: 16px;
+}
+
+.loginwith::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #cacaca;
+
+  left: 240px;
+  top: 16px;
+}

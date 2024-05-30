@@ -63,6 +63,29 @@ export class CoursesService {
     });
   }
 
+  editCourse(course: {
+    id: number;
+    course_title: string;
+    price: number;
+    imageUrl: string;
+  }): Observable<any> {
+    if (!this.accessToken) {
+      throw new Error(' Not Authorized');
+    }
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + this.accessToken
+    );
+
+    return this.http.patch<any>(
+      `http://localhost:3000/courses/edit/${course.id}`,
+      course,
+      {
+        headers,
+      }
+    );
+  }
+
   getMyCourses(page: number): Observable<any> {
     if (!this.accessToken) {
       throw new Error('Access token not found');
