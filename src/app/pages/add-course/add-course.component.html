@@ -73,10 +73,13 @@
               >
               <input
                 type="file"
-                name="imageUrl"
-                formControlName="imageUrl"
+                (change)="onFileSelected($event)"
                 class="w-[385px] bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
               />
+              <div *ngIf="">
+                <p *ngIf="" class="text-purple-400">Image is required.</p>
+                <p *ngIf="" class="text-purple-400">Invalid image.</p>
+              </div>
               <div *ngIf="">
                 <p *ngIf="" class="text-purple-400">Username is required.</p>
                 <p *ngIf="" class="text-purple-400">Invalid Username.</p>

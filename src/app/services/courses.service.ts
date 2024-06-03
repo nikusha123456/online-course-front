@@ -43,12 +43,7 @@ export class CoursesService {
     );
   }
 
-  createCourse(course: {
-    course_title: string;
-    description: string;
-    price: number;
-    imageUrl: string;
-  }): Observable<any> {
+  createCourse(course: FormData): Observable<any> {
     if (!this.accessToken) {
       throw new Error('Access token not found');
     }

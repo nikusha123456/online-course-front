@@ -9,6 +9,8 @@ import { CoursesService } from 'src/app/services/courses.service';
 })
 export class AddCourseComponent implements OnInit {
   courseForm!: FormGroup;
+  selectedFile!: File;
+
   ngOnInit(): void {}
 
   constructor(private coursesService: CoursesService, private fb: FormBuilder) {
@@ -16,14 +18,34 @@ export class AddCourseComponent implements OnInit {
       course_title: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.maxLength(200)]],
       price: [],
-      imageUrl: '',
     });
+  }
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
   }
 
   createCourse() {
     if (this.courseForm.valid) {
-      const course = this.courseForm.value;
-      this.coursesService.createCourse(course).subscribe(() => {
+      const formData = new FormData();
+      formData.append(
+        'course_title',
+        this.courseForm.get('course_title')?.value
+      );
+      formData.append('description', this.courseForm.get('description')?.value);
+      formData.append('price', this.courseForm.get('price')?.value);
+
+      if (this.selectedFile) {
+        formData.append('imageUrl', this.selectedFile, this.selectedFile.name);
+      } else {
+        alert('Please select an image file.');
+        return;
+      }
+
+      this.coursesService.createCourse(formData).subscribe((response) => {
+        console.log('Course created successfully:', response);
         window.location.reload();
         window.location.href = '/courses';
       });

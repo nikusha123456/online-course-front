@@ -40,11 +40,7 @@ export class ProfileService {
     });
   }
 
-  editAccount(user: {
-    username: string;
-    description: string;
-    imageUrl: string;
-  }): Observable<any> {
+  editAccount(user: FormData): Observable<any> {
     const headers = new HttpHeaders().set(
       'Authorization',
       'Bearer ' + this.accessToken

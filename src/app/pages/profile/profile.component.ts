@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   username?: string = '';
   description?: string = '';
   imageUrl?: string = '';
+  selectedFile: File | null = null;
 
   constructor(private profileService: ProfileService, private fb: FormBuilder) {
     this.editForm = this.fb.group({
@@ -24,6 +25,13 @@ export class ProfileComponent implements OnInit {
       description: '',
       imageUrl: '',
     });
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
   }
 
   ngOnInit(): void {
@@ -40,8 +48,13 @@ export class ProfileComponent implements OnInit {
 
   editAccount() {
     if (this.editForm.valid) {
-      const user = this.editForm.value;
-      this.profileService.editAccount(user).subscribe(() => {});
+      const formData = new FormData();
+      formData.append('username', this.editForm.get('username')?.value);
+      formData.append('description', this.editForm.get('description')?.value);
+      if (this.selectedFile) {
+        formData.append('imageUrl', this.selectedFile, this.selectedFile.name);
+      }
+      this.profileService.editAccount(formData).subscribe(() => {});
     }
   }
 }
