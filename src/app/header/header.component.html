@@ -107,7 +107,27 @@
               <a routerLink="/mycourses" class="menu-item">My Courses</a
               ><span class="menu-item-line"></span>
             </li>
+            <li *ngIf="isLoggedIn">
+              <a routerLink="/profile" class="menu-item">Profile</a
+              ><span class="menu-item-line"></span>
+            </li>
           </ul>
+          <div *ngIf="!isLoggedIn" class="my-3">
+            <a
+              routerLink="/signup"
+              class="flex items-center justify-center text-center h-[40px] w-[100px] border border-purple-800 bg-[#F2277E] rounded-md hover:bg-[#0C0E2B] hover:duration-200 duration-200 cursor-pointer text-white font-semibold"
+            >
+              Get Started
+            </a>
+          </div>
+          <div *ngIf="isLoggedIn" class="my-3">
+            <button
+              (click)="logOut()"
+              class="flex items-center justify-center text-center h-[40px] w-[100px] border border-purple-800 bg-[#F2277E] rounded-md hover:bg-[#0C0E2B] hover:duration-200 duration-200 cursor-pointer text-white font-semibold"
+            >
+              Log Out
+            </button>
+          </div>
         </div>
       </div>
 
@@ -171,6 +191,7 @@
         </div>
         <div *ngIf="!isLoggedIn">
           <a
+            routerLink="/signup"
             class="flex items-center justify-center text-center h-[40px] w-[100px] border border-purple-800 bg-purple-800 rounded-md hover:bg-[#0C0E2B] hover:duration-200 duration-200 cursor-pointer text-white font-semibold"
           >
             Get Started

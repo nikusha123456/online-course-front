@@ -198,7 +198,7 @@
                   [(ngModel)]="username"
                   name="username"
                   formControlName="username"
-                  class="w-[385px] bg-transparent border border-[#312a57] h-[40px] rounded outline-none px-[20px] py-[3px] text-purple-600 font-semibold text-base"
+                  class="w-full sm:w-96 bg-transparent border border-[#312a57] h-[40px] rounded outline-none px-3 py-[3px] text-purple-600 font-semibold text-base"
                 />
               </div>
               <div>
@@ -210,7 +210,7 @@
                   rows="3"
                   name="description"
                   formControlName="description"
-                  class="w-[385px] bg-transparent border border-[#312a57] rounded outline-none px-[20px] py-[3px] text-purple-600 font-semibold text-base"
+                  class="w-full sm:w-96 bg-transparent border border-[#312a57] rounded outline-none px-3 py-[3px] text-purple-600 font-semibold text-base"
                 ></textarea>
               </div>
               <div>
@@ -220,7 +220,7 @@
                 <input
                   type="file"
                   (change)="onFileSelected($event)"
-                  class="w-[385px] bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
+                  class="w-full sm:w-96 bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
                 />
               </div>
               <button

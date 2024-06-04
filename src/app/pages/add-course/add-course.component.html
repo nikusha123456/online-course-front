@@ -22,95 +22,78 @@
   </div>
 </section>
 <section class="flex items-center justify-center py-[60px] bg-[#0C0E2B]">
-  <div class="container flex items-center justify-center">
-    <div
-      class="flex flex-col xs:mx-[0px] sm:mx-[15px] items-center justify-center space-y-8 mx-0"
-    >
+  <div class="container flex items-center justify-center px-4">
+    <div class="flex flex-col items-center justify-center space-y-8 w-full">
       <div
-        class="flex items-center justify-center bg-[#0C0E2B] xs:px-[0px] sm:px-[15px] px-0"
+        class="flex flex-col items-center justify-center bg-[#0C0E2B] p-4 md:p-8 lg:p-12 w-full max-w-3xl login-box"
       >
-        <div
-          class="flex flex-col items-center justify-center xs:px-[0px] sm:px-[30px] md:px-[50px] pb-[50px] pt-[30px] login-box"
+        <form
+          class="space-y-5 w-full"
+          [formGroup]="courseForm"
+          (ngSubmit)="createCourse()"
         >
-          <form
-            class="space-y-5"
-            [formGroup]="courseForm"
-            (ngSubmit)="createCourse()"
+          <div
+            class="flex flex-col space-y-3 items-start justify-start py-4 w-full"
           >
-            <div
-              class="flex flex-col space-y-3 items-start justify-start py-4 mx-2"
+            <label class="text-white text-base sm:text-lg">Course Title</label>
+            <input
+              type="text"
+              formControlName="course_title"
+              name="course_title"
+              required
+              class="w-full bg-transparent border border-[#312a57] h-[40px] sm:h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+            />
+            <div *ngIf="">
+              <p *ngIf="" class="text-purple-400">Username is required.</p>
+              <p *ngIf="" class="text-purple-400">Invalid Username.</p>
+            </div>
+            <label class="text-white text-base sm:text-lg"
+              >Regular Price $</label
             >
-              <label class="text-white xs:text-base sm:text-lg"
-                >Course Title
-              </label>
-              <input
-                type="text"
-                formControlName="course_title"
-                name="course_title"
-                required
-                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
-              />
-              <div *ngIf="">
-                <p *ngIf="" class="text-purple-400">Username is required.</p>
-                <p *ngIf="" class="text-purple-400">Invalid Username.</p>
-              </div>
-              <label class="text-white xs:text-base sm:text-lg"
-                >Regular Price $
-              </label>
-              <input
-                type="text"
-                formControlName="price"
-                name="price"
-                required
-                class="xl:w-[680px] lg:w-[580px] md:w-[500px] sm:w-[360px] xs:w-[285px] w-[260px] bg-transparent border border-[#312a57] sm:h-[52px] h-[40px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
-              />
-              <div *ngIf="">
-                <p *ngIf="" class="text-purple-400">Username is required.</p>
-                <p *ngIf="" class="text-purple-400">Invalid Username.</p>
-              </div>
-              <label class="block text-sm font-medium text-gray-700"
-                >Image</label
-              >
-              <input
-                type="file"
-                (change)="onFileSelected($event)"
-                class="w-[385px] bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
-              />
-              <div *ngIf="">
-                <p *ngIf="" class="text-purple-400">Image is required.</p>
-                <p *ngIf="" class="text-purple-400">Invalid image.</p>
-              </div>
-              <div *ngIf="">
-                <p *ngIf="" class="text-purple-400">Username is required.</p>
-                <p *ngIf="" class="text-purple-400">Invalid Username.</p>
-              </div>
-              <label class="text-white text-lg">Description</label>
-              <textarea
-                rows="8"
-                name="description"
-                formControlName="description"
-                class="w-[685px] bg-transparent border border-[#312a57] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
-              ></textarea>
-              <div *ngIf="">
-                <p *ngIf="" class="text-purple-400">Password is required.</p>
-                <p *ngIf="" class="text-purple-400">
-                  Password should be at least 8 characters.
-                </p>
-              </div>
+            <input
+              type="text"
+              formControlName="price"
+              name="price"
+              required
+              class="w-full bg-transparent border border-[#312a57] h-[40px] sm:h-[52px] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+            />
+            <div *ngIf="">
+              <p *ngIf="" class="text-purple-400">Username is required.</p>
+              <p *ngIf="" class="text-purple-400">Invalid Username.</p>
             </div>
-            <div
-              class="flex flex-row justify-between xs:space-x-18 md:space-x-24 sm:space-x-36 items-center mx-4 space-x-14"
-            ></div>
-            <div class="flex items-center justify-center">
-              <button
-                type="submit"
-                class="sm:w-[300px] xs:w-[230px] w-[200px] md:w-full px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
-              >
-                Create Course
-              </button>
+            <label class="block text-sm font-medium text-gray-700">Image</label>
+            <input
+              type="file"
+              (change)="onFileSelected($event)"
+              class="w-full bg-transparent outline-none py-[3px] text-purple-600 font-semibold text-base"
+            />
+            <div *ngIf="">
+              <p *ngIf="" class="text-purple-400">Image is required.</p>
+              <p *ngIf="" class="text-purple-400">Invalid image.</p>
             </div>
-          </form>
-        </div>
+            <label class="text-white text-base sm:text-lg">Description</label>
+            <textarea
+              rows="8"
+              name="description"
+              formControlName="description"
+              class="w-full bg-transparent border border-[#312a57] rounded outline-none px-[20px] py-[3px] text-white font-semibold text-base"
+            ></textarea>
+            <div *ngIf="">
+              <p *ngIf="" class="text-purple-400">Password is required.</p>
+              <p *ngIf="" class="text-purple-400">
+                Password should be at least 8 characters.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <button
+              type="submit"
+              class="w-full max-w-xs px-[25px] py-[10px] bg-[#5f2ded] text-center text-white font-semibold text-base border border-[#5f2ded] rounded hover:bg-[#0C0E2B] hover:duration-200 duration-200"
+            >
+              Create Course
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
