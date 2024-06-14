@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-courses',
@@ -11,8 +12,13 @@ export class CoursesComponent implements OnInit {
   currentPage: number = 1;
   totalCourses: number = 0;
   selectedSortOption: string = '';
+  searchForm!: FormGroup;
 
-  constructor(private courseService: CoursesService) {}
+  constructor(private courseService: CoursesService, private fb: FormBuilder) {
+    this.searchForm = this.fb.group({
+      title: '',
+    });
+  }
 
   ngOnInit(): void {
     this.fetchCourses();
@@ -77,5 +83,16 @@ export class CoursesComponent implements OnInit {
       { length: Math.ceil(this.totalCourses / 9) },
       (_, index) => index + 1
     );
+  }
+
+  searchCourses() {
+    if (this.searchForm.valid) {
+      const titleObj = this.searchForm.value;
+      const title = titleObj.title;
+      console.log(title);
+      this.courseService.searchCourses(title).subscribe((data) => {
+        this.courses = data.courses;
+      });
+    }
   }
 }

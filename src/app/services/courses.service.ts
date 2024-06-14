@@ -98,4 +98,14 @@ export class CoursesService {
       }
     );
   }
+
+  searchCourses(title: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    return this.http.get(`http://localhost:3000/courses?title=${title}`, {
+      headers,
+    });
+  }
 }

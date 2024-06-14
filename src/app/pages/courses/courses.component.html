@@ -56,11 +56,22 @@
             class="flex flex-col items-start space-y-3 w-full border border-[#312a57] pt-[40px] pb-[33px] pl-[20px] pr-[25px]"
           >
             <div class="text-white text-xl font-bold mb-2">Search</div>
+
             <div class="w-full">
-              <input
-                class="w-full border border-[#fff] bg-transparent outline-none text-white font-medium pl-[13px] h-[46px] text-sm"
-                placeholder="Search Course"
-              />
+              <form [formGroup]="searchForm" (ngSubmit)="searchCourses()">
+                <input
+                  class="w-full border border-[#fff] bg-transparent outline-none text-white font-medium pl-[13px] h-[46px] text-sm"
+                  placeholder="Search Course"
+                  formControlName="title"
+                  name="title"
+                />
+                <button
+                  type="submit"
+                  class="my-2 px-3 py-1 bg-[#5f2ded] text-white rounded-md cursor-pointer duration-300 border border-[#5f2ded] hover:bg-[#0C0E2B] hover:duration-400"
+                >
+                  Search
+                </button>
+              </form>
             </div>
           </div>
           <div
