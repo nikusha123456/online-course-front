@@ -108,4 +108,12 @@ export class CoursesService {
       headers,
     });
   }
+
+  getCourseById(id: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    return this.http.get(`http://localhost:3000/courses/${id}`, { headers });
+  }
 }

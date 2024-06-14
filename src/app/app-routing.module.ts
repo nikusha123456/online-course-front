@@ -12,6 +12,7 @@ import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { MycoursesComponent } from './pages/mycourses/mycourses.component';
 import { EditCourseComponent } from './pages/edit-course/edit-course.component';
+import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,7 @@ const routes: Routes = [
   },
   { path: 'course-edit/:id', component: EditCourseComponent },
   { path: 'admin/login', component: AdminLoginComponent },
+  { path: 'course/:id', component: CoursesPageComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
