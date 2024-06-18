@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./courses.component.css'],
 })
 export class CoursesComponent implements OnInit {
+  [x: string]: any;
   courses: any[] = [];
   currentPage: number = 1;
   totalCourses: number = 0;
