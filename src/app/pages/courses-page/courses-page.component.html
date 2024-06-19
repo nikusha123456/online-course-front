@@ -21,33 +21,82 @@
     </div>
   </div>
 </section>
-<section class="bg-[#0C0E2C] flex items-center justify-center py-32">
+<section
+  class="bg-[#0C0E2C] flex items-center justify-center py-32 flex-col space-y-16"
+>
   <div class="container flex flex-row items-center justify-evenly space-x-36">
-    <div class="flex flex-col items-center justify-center space-y-2">
+    <div class="flex flex-col items-center justify-center space-y-8">
       <div class="flex flex-row items-center justify-between buttons-div">
         <button
+          (click)="switchToCurriculum()"
           class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px] border-r-2 border-[#312a57]"
         >
           Curriculum
         </button>
         <button
-          class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px] border-r-2 border-[#312a57]"
+          (click)="switchToDescription()"
+          [class.active]="isDescription"
+          class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px] border-r-2 border-[#312a57] description-button"
         >
           Description
         </button>
         <button
+          (click)="switchToReviews()"
           class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px] border-r-2 border-[#312a57]"
         >
           Reviews
         </button>
         <button
-          class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px]"
+          [class.active]="isInstructor"
+          (click)="switchToInstructor()"
+          class="flex items-center justify-center text-white bg-[#0c0e2b] h-[60px] w-[170px] hover:bg-[#5f2ded] duration-300 hover:duration-300 font-semibold rounded-[2px] instructor-button"
         >
           Instructor
         </button>
       </div>
-      <div></div>
+      <!-- DESCRIPTION -->
+      <div
+        *ngIf="isDescription"
+        class="flex flex-col space-y-6 xl:w-[680px] xl:h-[470px]"
+      >
+        <div class="items-center justify-start">
+          <h1 class="text-white text-4xl font-bold">Description</h1>
+        </div>
+        <div class="items-center justify-start">
+          <p class="text-[#949392] text-lg font-normal">
+            {{ description }}
+          </p>
+        </div>
+      </div>
+      <!-- INSTRUCTOR -->
+      <div
+        *ngIf="isInstructor"
+        class="flex flex-row items-center justify-between"
+      >
+        <div class="flex items-start justify-center">
+          <!-- <div
+            class="lg:w-[120px] lg:h-[120px] sm:w-[80px] sm:h-[80px] xs:w-[60px] xs:h-[50px] w-[60px] h-[50px]"
+          >
+            <img
+              class="w-full h-full object-cover rounded-full border-[2px] border-[#c4c4c4] p-[2px]"
+              [src]="imageUrl"
+              loading="lazy"
+              *ngIf="imageUrl"
+            />
+            <img
+              class="w-full h-full object-cover rounded-full border-[2px] border-[#c4c4c4] p-[2px]"
+              src="../../../assets/images/casual-default-pfp-aesthetic-xbt951r8ftf29b58.jpg"
+              loading="lazy"
+              *ngIf="!imageUrl"
+            />
+          </div> -->
+        </div>
+        <div></div>
+      </div>
     </div>
     <div>4</div>
+  </div>
+  <div class="flex items-center justify-center">
+    <h1 class="text-white text-8xl font-bold">Coming Soon</h1>
   </div>
 </section>

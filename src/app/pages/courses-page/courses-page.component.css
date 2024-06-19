@@ -30,3 +30,11 @@
 .buttons-div {
   box-shadow: 0 0 50px 10px rgba(95, 45, 237, 0.1);
 }
+
+.description-button.active {
+  background-color: #5f2ded;
+}
+
+.instructor-button.active {
+  background-color: #5f2ded;
+}

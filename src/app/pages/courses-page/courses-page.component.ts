@@ -11,6 +11,38 @@ export class CoursesPageComponent implements OnInit {
   course_title!: string;
   description!: string;
   price!: number;
+  isDescription: boolean = false;
+  isReviews: boolean = false;
+  isCurriculum: boolean = false;
+  isInstructor: boolean = false;
+
+  switchToDescription() {
+    this.isDescription = true;
+    this.isCurriculum = false;
+    this.isInstructor = false;
+    this.isReviews = false;
+  }
+
+  switchToReviews() {
+    this.isReviews = true;
+    this.isInstructor = false;
+    this.isDescription = false;
+    this.isCurriculum = false;
+  }
+
+  switchToCurriculum() {
+    this.isCurriculum = true;
+    this.isInstructor = false;
+    this.isDescription = false;
+    this.isReviews = false;
+  }
+
+  switchToInstructor() {
+    this.isInstructor = true;
+    this.isReviews = false;
+    this.isDescription = false;
+    this.isCurriculum = false;
+  }
 
   constructor(
     private courseService: CoursesService,
